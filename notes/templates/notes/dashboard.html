@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+
+.dashboard-container{
+    padding:40px;
+}
+
+.dashboard-title{
+    font-weight:600;
+    margin-bottom:30px;
+}
+
+.stat-card{
+    border:none;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    text-align:center;
+    background:white;
+}
+
+.stat-number{
+    font-size:28px;
+    font-weight:600;
+    color:#4b6cb7;
+}
+
+.stat-label{
+    color:gray;
+}
+
+.most-note{
+    margin-top:40px;
+    padding:25px;
+    border-radius:15px;
+    background:white;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+</style>
+
+
+<div class="container dashboard-container">
+
+<h2 class="dashboard-title">Dashboard Overview</h2>
+
+<div class="row">
+
+<div class="col-md-4">
+<div class="stat-card">
+<div class="stat-number">{{ total_notes }}</div>
+<div class="stat-label">Total Notes</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="stat-card">
+<div class="stat-number">{{ total_users }}</div>
+<div class="stat-label">Registered Users</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="stat-card">
+<div class="stat-number">{{ total_downloads }}</div>
+<div class="stat-label">Total Downloads</div>
+</div>
+</div>
+
+</div>
+
+
+{% if most_downloaded %}
+
+<div class="most-note">
+
+<h4>Most Downloaded Note</h4>
+
+<p><strong>Title:</strong> {{ most_downloaded.title }}</p>
+
+<p><strong>Subject:</strong> {{ most_downloaded.subject }}</p>
+
+<p><strong>Uploaded by:</strong> {{ most_downloaded.uploaded_by.username }}</p>
+
+<p><strong>Downloads:</strong> {{ most_downloaded.download_count }}</p>
+
+<a href="{% url 'download_note' most_downloaded.id %}" class="btn btn-primary">
+Download
+</a>
+
+</div>
+
+{% endif %}
+
+</div>
+
+{% endblock %}
+
