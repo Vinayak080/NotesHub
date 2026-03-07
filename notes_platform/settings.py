@@ -140,5 +140,6 @@ LOGIN_REDIRECT_URL = '/notes/'
 LOGOUT_REDIRECT_URL = '/notes/'
 
 #For deployment
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 ALLOWED_HOSTS = ['*']
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
