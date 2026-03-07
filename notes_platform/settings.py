@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'kcq8zt5vwu5f^e=(wj#f35yp^fy+2n&xnn_x+r8yh7*va(8t2%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -140,6 +140,6 @@ LOGIN_REDIRECT_URL = '/notes/'
 LOGOUT_REDIRECT_URL = '/notes/'
 
 #For deployment
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['noteshub-7l6e.onrender.com']
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
