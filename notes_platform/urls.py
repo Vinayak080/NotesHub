@@ -26,10 +26,11 @@ from notes import views
 from django.shortcuts import redirect
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
-
+from django.http import HttpResponse
+from django.urls import path
 
 def home(request):
-    return redirect('/notes/')
+    return HttpResponse("NotesHub is running successfully")
 
 urlpatterns = [
     path('', home),   # Root URL

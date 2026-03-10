@@ -84,10 +84,11 @@ WSGI_APPLICATION = 'notes_platform.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'notes_database',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 # Password validation
@@ -141,5 +142,6 @@ LOGOUT_REDIRECT_URL = '/notes/'
 
 #For deployment
 ALLOWED_HOSTS = ['noteshub-7l6e.onrender.com']
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
