@@ -28,12 +28,13 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.http import HttpResponse
 from django.urls import path
+from notes.views import note_list
 
 def home(request):
     return HttpResponse("NotesHub is running successfully")
 
 urlpatterns = [
-    path('', home),   # Root URL
+    path('', note_list),   # Root URL
     path('admin/', admin.site.urls),
     path('notes/', include('notes.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
