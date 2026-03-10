@@ -25,7 +25,7 @@ SECRET_KEY = 'kcq8zt5vwu5f^e=(wj#f35yp^fy+2n&xnn_x+r8yh7*va(8t2%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['noteshub-7l6e.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
